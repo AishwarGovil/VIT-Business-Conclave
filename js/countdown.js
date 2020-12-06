@@ -14,11 +14,16 @@ var x = setInterval(function () {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+  days = days < 10 ? "0" + days : days;
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
   // Output the result in an element with id="demo"
   // document.querySelector(".number").innerHTML =
   //   days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-  $(".number").html(`${days}d ${hours}h ${minutes}m ${seconds}s `);
+  $(".number").html(`${days} : ${hours} : ${minutes} : ${seconds} `);
 
   // If the count down is over, write some text
   if (distance < 0) {
